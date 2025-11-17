@@ -12,4 +12,5 @@ All files in the link: https://drive.google.com/drive/folders/1Hlr-ADl5-UPdKwpL1
 
 ### Hugging Face
 `zetianli/CS329H_Project_user_profiles`: user profiles & their reviews
+
 `zetianli/CS329H_Project_business`: basic information of business involved, with sampled comments

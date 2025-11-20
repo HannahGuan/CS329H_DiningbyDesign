@@ -30,6 +30,7 @@ Perplexity of the User profile + the restaurant's profile in the trained model.
 ### Data Size
 
 User Profiles = 20k
+
 Resautants Profiles = 50k
 
 # Next Step

@@ -43,7 +43,7 @@ Resautants Profiles = 50k
 
 **Openai/gpt-oss-20b**
 
-**openai/gpt-oss-120b**
+**Openai/gpt-oss-120b**
 
 
 

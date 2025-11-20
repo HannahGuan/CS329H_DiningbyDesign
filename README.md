@@ -27,6 +27,11 @@ User profile + restaurant5's profile + score5
 Inference:
 Perplexity of the User profile + the restaurant's profile in the trained model.
 
+### Data Size
+
+User Profiles = 20k
+Resautants Profiles = 50k
+
 # Next Step
 Create each user's profile (Possibly by creating a prompt for each user based on reviews). Now-11.21 Fatday
 

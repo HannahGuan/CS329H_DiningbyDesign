@@ -8,5 +8,7 @@ RESTAURANT_PROFILE_GENERATION_PROMPT = """You are a summarizer to elaborate on t
 <|The End of JSON Information|>
 
 # Guidelines:
-1. Your response should be only one paragraph
-2. You should not mention stars and ‘other reviewers’ explicitly. Instead, your style should sound like a neutral description."""
+1. Your response should be only one paragraph. 
+2. You should mention categories, attributes, and name of the restaurant. 
+3. You should learn from the sampled reviews. 
+4. You should not mention stars and ‘other reviewers’ explicitly. Instead, your style should be neutral."""

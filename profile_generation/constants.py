@@ -1,7 +1,7 @@
 USER_PROFILE_GENERATION_PROMPT = """fill in"""
 
 
-RESARUANTS_PROFILE_GENERATION_PROMPT = """You are a summarizer to elaborate on the fragmented information about a restaurant. Your goal is to generate a fluent description of a business restaurant based on the given json-like description. 
+RESTAURANT_PROFILE_GENERATION_PROMPT = """You are a summarizer to elaborate on the fragmented information about a restaurant. Your goal is to generate a fluent description of a business restaurant based on the given json-like description. 
 
 <|The Start of JSON Information>
 {json_info}

@@ -37,6 +37,19 @@ User Profiles = 20k
 
 Resautants Profiles = 50k
 
+### Models Candidates to Generate Profiles:
+
+**Qwen/Qwen3-30B-A3B**
+
+**Openai/gpt-oss-20b**
+
+**openai/gpt-oss-120b**
+
+
+
+
+
+
 # Next Step
 Create each user's profile (Possibly by creating a prompt for each user based on reviews). Now-11.21 Fatday
 

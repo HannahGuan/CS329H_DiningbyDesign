@@ -19,9 +19,13 @@ All files in the link: https://drive.google.com/drive/folders/1Hlr-ADl5-UPdKwpL1
 Input to training: 
 
 User profile + restaurant1's profile + score1
+
 User profile + restaurant2's profile + score2
+
 User profile + restaurant3's profile + score3
+
 User profile + restaurant4's profile + score4
+
 User profile + restaurant5's profile + score5
 
 Inference:

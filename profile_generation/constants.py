@@ -1,18 +1,63 @@
-USER_PROFILE_GENERATION_PROMPT = """You are a summarizer to elaborate on the fragmented information about a user. Your goal is to generate a fluent description based on the given json-like description. 
+USER_PROFILE_GENERATION_PROMPT = USER_PROFILE_GENERATION_PROMPT = """You are a writer who creates concise, human-readable user profiles from raw data.
 
-<|The Start of JSON Information>
-{user_json}
-<|The End of JSON Information|> 
+You will be given JSON-like data about a single user's data. This data may include:
+- One or more reviews (with fields like "text", "stars", "business categories", "city", "state").
+- Optional activity data (e.g., review_count, useful/funny/cool counts).
+- Optional business attributes for the places they reviewed (e.g., ambience, price range, alcohol, outdoor seating).
 
-# Guidelines: 
-1. Your response should be only one paragraph, starting with user’s name.
-2. You should infer the user’s personality and preference from their reviews and activity data.
-3. You should not mention numeric data explicitly. """
+Your task is to infer the user's tastes and personality and express them as a natural-language description.
 
-# Example User 
-"""
-Jonathon is a seasoned and sociable Yelp user who has been part of the community for many years, sharing thoughtful feedback across a wide range of dining and hospitality experiences. With a large network of friends and a consistently high average rating, Jonathon appears to appreciate quality service, flavorful food, and relaxed, casual atmospheres. His reviews often highlight hot, fresh meals and attentive service, though he is not hesitant to deduct a star when customer service falls short. He enjoys trying a mix of traditional American fare, seafood, and pub-style eateries, often favoring establishments that offer reliable comfort food, good value, and a clean setting. His style is straightforward and sincere, with a strong focus on practicality and personal satisfaction rather than flair, and he seems to enjoy revisiting places that leave a positive impression. Overall, Jonathon comes across as an easygoing but discerning customer who values consistency, cleanliness, and hearty meals in friendly environments.
-"""
+<|USER's BASIC INFORMATION|>
+{user_basic_information}
+<|USER's BASIC INFORMATION|>
+
+<|USER's REVIEWS|>
+{user_review_info}
+<|USER's REVIEWS|>
+
+# Output requirements
+- Output exactly ONE paragraph, wrapped in <PROFILE> and </PROFILE> tags.
+- The paragraph must start with the user's name (if available), e.g., "Jonathon enjoys..." or "Matthew is the kind of person who...".
+- Length: about 3-6 sentences.
+- Do NOT mention that you are reading JSON or data, and do not list field names or quote raw keys.
+
+# Content guidelines
+1. Focus on the user's preferences and habits inferred from the reviews, such as:
+   - Types of places they enjoy (e.g., seafood, burgers, wine bars, hotels, casual spots, family-friendly venues).
+   - Price sensitivity (e.g., prefers casual mid-range places vs. high-end spots).
+   - Atmosphere preferences (casual vs. upscale, lively vs. quiet, family-friendly vs. adult-oriented).
+   - Attitude toward service, food quality, and consistency (e.g., values friendly service, hot and fresh food, etc.).
+   - Any consistent patterns (e.g., often returns to places they like, appreciates variety, tends to recommend places to others).
+
+2. Infer personality traits from their tone and comments:
+   - Are they easy-going or demanding?
+   - Do they emphasize friendliness, cleanliness, speed, value, or atmosphere?
+   - Do they sound enthusiastic, critical, adventurous, etc.?
+
+3. You must NOT:
+   - Mention any numeric values explicitly (no star ratings, no counts, no dates, no exact prices).
+   - Mention specific field names like "review_count", "business_id", "attributes", or "categories".
+   - Refer to the text as "reviews", "data", or "JSON"; just describe the person.
+   - Reveal identifiable information like exact dates or IDs.
+
+4. If information is limited or inconsistent:
+   - Still write a brief, coherent profile using hedged language (e.g., "seems to enjoy", "appears to value").
+   - Do not invent detailed facts that clearly conflict with the data.
+
+Your final answer must be ONLY the <PROFILE> paragraph and nothing else."""
+
+
+
+# EXAMPLE USER PROFILE
+# Jonathon enjoys a relaxed, casual dining scene, ranging from fresh seafood and hearty pastas to juicy burgers and 
+# classic cheesesteaks, and he often highlights hot, fresh food and friendly service as the deciding factors. He gravitates
+# toward moderately priced venues that offer a comfortable vibe, free Wi‑Fi and easy parking, and he’s quick to return to spots
+# that deliver consistent quality. When it comes to accommodations, he appreciates spacious, clean rooms and attentive staff, 
+# especially when the location is convenient for local events. Overall, his tone suggests an easy‑going, social personality
+# that values reliability, good value and a welcoming atmosphere.
+
+
+
 
 RESTAURANT_PROFILE_GENERATION_PROMPT = """You are a summarizer to elaborate on the fragmented information about a restaurant. Your goal is to generate a fluent description of a business restaurant based on the given json-like description. 
 

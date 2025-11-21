@@ -20,7 +20,7 @@ model =  OpenAI(
 
 
 
-
+# need HPC version
 def get_profile(generation_prompt: str) -> str:
     proflie = ""
     while(proflie == ""):
@@ -81,9 +81,23 @@ def process_user_prompt(data: dict) -> str:
 
 
 def process_business_prompt(data: dict) -> str:
-    pass
+    sample_reviews = data['sample_reviews']
+    removed_keys = ['sample_reviews', '__index_level_0__', 'business_id', "stars"]
 
+    def generate_review_contents(reviews: list[str]) -> str:
+        contents = ""
+        for i in range(len(reviews)):
+            contents += f"Review {i+1}:\n{reviews[i]}\n\n"
+        return contents
 
+    def remove_null_attributes(additional_info: dict) -> dict:
+        pass
+
+    sample_reviews_contents = generate_review_contents(sample_reviews)
+    business_basic_information = ""
+    return RESTAURANT_PROFILE_GENERATION_PROMPT.format(business_basic_information=business_basic_information, sample_reviews=sample_reviews_contents)
+
+# still working
 if __name__ == "__main__":
     #print(get_profile("Hello, are you running correctly?"))
     parser = argparse.ArgumentParser()

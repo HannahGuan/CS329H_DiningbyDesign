@@ -1,19 +1,21 @@
 USER_PROFILE_GENERATION_PROMPT = USER_PROFILE_GENERATION_PROMPT = """You are a writer who creates concise, human-readable user profiles from raw data.
 
-You will be given JSON-like data about a single user's data. This data may include:
-- One or more reviews (with fields like "text", "stars", "business categories", "city", "state").
-- Optional activity data (e.g., review_count, useful/funny/cool counts).
-- Optional business attributes for the places they reviewed (e.g., ambience, price range, alcohol, outdoor seating).
+You will be given JSON-like data of user's basic information:
 
-Your task is to infer the user's tastes and personality and express them as a natural-language description.
 
 <|USER's BASIC INFORMATION|>
 {user_basic_information}
 <|USER's BASIC INFORMATION|>
 
+
+
+Also, you will be given a list of reviews to the current user from different restaurants or businesses:
+
 <|USER's REVIEWS|>
 {user_review_info}
 <|USER's REVIEWS|>
+
+Your task is to infer the user's tastes and personality and express them as a natural-language description.
 
 # Output requirements
 - Output exactly ONE paragraph, wrapped in <PROFILE> and </PROFILE> tags.
@@ -59,19 +61,38 @@ Your final answer must be ONLY the <PROFILE> paragraph and nothing else."""
 
 
 
-RESTAURANT_PROFILE_GENERATION_PROMPT = """You are a summarizer to elaborate on the fragmented information about a restaurant. Your goal is to generate a fluent description of a business restaurant based on the given json-like description. 
+RESTAURANT_PROFILE_GENERATION_PROMPT = """
+You are a writer creating concise profiles of restaurants from structured data.
 
-<|The Start of JSON Information>
-{json_info}
-<|The End of JSON Information|>
+You are given a JSON-like object describing one business:
 
-# Guidelines:
-1. Your response should be only one paragraph. 
-2. You should mention categories, attributes, and name of the restaurant. 
-3. You should learn from the sampled reviews. 
-4. You should not mention stars and ‘other reviewers’ explicitly. Instead, your style should be neutral."""
+<|BUSINESS BASIC INFORMATION|>
+{business_basic_information}
+<|BUSINESS BASIC INFORMATION|>
 
-# Example Restaurant
-"""
-Target in Tucson, AZ is a large department store offering a broad range of products across categories such as fashion, home and garden, electronics, and furniture. The store is equipped with practical amenities including bike parking, wheelchair accessibility, a parking lot, and credit card acceptance, though it lacks services like takeout, delivery, catering, reservations, or outdoor seating. While the store is generally clean and organized, the customer experience is often marred by inefficient front-end operations, particularly around checkout. Shoppers report long waits and confusion due to a heavy reliance on self-checkout stations and limited staffed lanes, with employees sometimes appearing disengaged or unprepared to handle more complex transactions such as coupon redemption or regulated item purchases. Although inventory includes toys and collectible cards, some customers have noted a lack of variety and infrequent restocking. Overall, the store provides the expected convenience of a department store but may fall short in providing seamless in-person service.
+
+
+Also, you will be given a list of reviews to the current business:
+
+<|SAMPLE REVIEWS TO CURRENT BUSINESS|>
+{sample_reviews}
+<|SAMPLE REVIEWS TO CURRENT BUSINESS|>
+
+TASK
+Write a single, fluent paragraph that summarizes what this restaurant is like.
+
+REQUIREMENTS
+1. The output must be exactly one paragraph (no headings, bullet points, or line breaks).
+2. Clearly mention the restaurant's **name** and **location** (city and state, if available).
+3. Refer to the **categories** to describe the type of restaurant (e.g., cuisine, setting, or business type).
+4. Use relevant **attributes** to describe practical details such as price level, ambiance, noise, reservations, parking, takeout/delivery, outdoor seating, suitability for groups/families, etc.
+5. Read the **sample_reviews** and use them to infer the overall atmosphere, service style, food quality, and typical customer experience, but:
+   - Do NOT mention “reviews”, “reviewers”, “ratings”, “stars”, or “Yelp”.
+   - Paraphrase instead of copying text verbatim.
+6. Keep the tone neutral and descriptive, not overly positive or negative.
+7. Do not invent specific details that are not suggested by the JSON (e.g., menu items, exact prices, or décor themes that are not implied).
+8. If some fields (attributes, reviews, etc.) are missing or empty, simply omit them; do not say that the information is missing.
+
+OUTPUT FORMAT
+- Return only the final paragraph as plain text, with no quotes around it and no additional explanation.
 """

@@ -15,50 +15,37 @@ Also, you will be given a list of reviews to the current user from different res
 {user_review_info}
 <|USER's REVIEWS|>
 
-Your task is to infer the user's tastes and personality and express them as a natural-language description.
+
+Your task is to infer the user's **dining preferences** and express them as a natural-language description.
+
+Write a concise user profile that can be used to **optimize restaurant recommendation**
+Focus on clear, explicit preference signals.
+
+# Instructions:
+1. Begin with 1-2 sentences summarizing the user's overall dining style and personality.
+2. Describe preferred **cuisines and food types** (e.g., American comfort food, seafood, Mexican, sushi, burgers, vegetarian options), based only on restaurant-like businesses.
+3. Describe preferred **ambiance and atmosphere** (e.g., casual, family-friendly, quiet, lively, sports-bar, upscale).
+4. Describe expectations around **service**, **speed**, and **cleanliness**, using both restaurant and non-restaurant reviews when helpful.
+5. Indicate typical **price range and value sensitivity** (e.g., budget-friendly, mid-range, fine dining, generous portions vs. small plates), if inferable.
+6. Mention relevant **practical preferences** when clear (parking, takeout/delivery, reservations, outdoor seating, kid-friendliness, late-night hours, etc.).
+7. Note how critical or forgiving the user tends to be (strict vs. easygoing), without mentioning “stars” or “ratings”.
+8. Do not mention Yelp, reviews, or “other reviewers”.
+9. Do not invent details that are not supported by the data.
+10. Mention the user's **preferences** and **dislikes** in a neutral tone.
 
 # Output requirements
 - Output exactly ONE paragraph, wrapped in <PROFILE> and </PROFILE> tags.
-- The paragraph must start with the user's name (if available), e.g., "Jonathon enjoys..." or "Matthew is the kind of person who...".
-- Length: about 3-6 sentences.
-- Do NOT mention that you are reading JSON or data, and do not list field names or quote raw keys.
-
-# Content guidelines
-1. Focus on the user's preferences and habits inferred from the reviews, such as:
-   - Types of places they enjoy (e.g., seafood, burgers, wine bars, hotels, casual spots, family-friendly venues).
-   - Price sensitivity (e.g., prefers casual mid-range places vs. high-end spots).
-   - Atmosphere preferences (casual vs. upscale, lively vs. quiet, family-friendly vs. adult-oriented).
-   - Attitude toward service, food quality, and consistency (e.g., values friendly service, hot and fresh food, etc.).
-   - Any consistent patterns (e.g., often returns to places they like, appreciates variety, tends to recommend places to others).
-
-2. Infer personality traits from their tone and comments:
-   - Are they easy-going or demanding?
-   - Do they emphasize friendliness, cleanliness, speed, value, or atmosphere?
-   - Do they sound enthusiastic, critical, adventurous, etc.?
-
-3. You must NOT:
-   - Mention any numeric values explicitly (no star ratings, no counts, no dates, no exact prices).
-   - Mention specific field names like "review_count", "business_id", "attributes", or "categories".
-   - Refer to the text as "reviews", "data", or "JSON"; just describe the person.
-   - Reveal identifiable information like exact dates or IDs.
-
-4. If information is limited or inconsistent:
-   - Still write a brief, coherent profile using hedged language (e.g., "seems to enjoy", "appears to value").
-   - Do not invent detailed facts that clearly conflict with the data.
+- The paragraph must start with the user's name (if available).
+- Length: One long paragraph of plain text
 
 Your final answer must be ONLY the <PROFILE> paragraph and nothing else."""
 
 
 
-# EXAMPLE USER PROFILE
-# Jonathon enjoys a relaxed, casual dining scene, ranging from fresh seafood and hearty pastas to juicy burgers and 
-# classic cheesesteaks, and he often highlights hot, fresh food and friendly service as the deciding factors. He gravitates
-# toward moderately priced venues that offer a comfortable vibe, free Wi‑Fi and easy parking, and he’s quick to return to spots
-# that deliver consistent quality. When it comes to accommodations, he appreciates spacious, clean rooms and attentive staff, 
-# especially when the location is convenient for local events. Overall, his tone suggests an easy‑going, social personality
-# that values reliability, good value and a welcoming atmosphere.
 
-
+USER_PROFILE_GENERATION_EXAMPLE = """
+Jonathon is a relaxed, social eater who gravitates toward hearty American comfort foods such as seafood pastas, burgers, fries, cobb salads, and classic sandwiches like Philly cheesesteak, preferring venues that serve these dishes well. He favors casual, family‑friendly spots with a laid‑back bar vibe—often sports‑oriented or lively pubs that offer free Wi‑Fi, outdoor seating, and ample parking (bike racks or surface lots) and that accommodate groups, kids, and takeout or delivery. Service matters to him: he values friendly, prompt staff and will note delays (e.g., waiting for a check) but remains forgiving if the food is hot, fresh, and flavorful. He typically chooses mid‑range establishments (price level around 2) that provide good value and moderate portions, and he likes full‑bar or beer‑and‑wine options, casual attire, and average noise levels. Practical comforts such as credit‑card acceptance, wheelchair accessibility, and a clean, well‑maintained environment are important, while ambience that feels overly dingy is a minor drawback. Overall, Jonathon is easygoing but attentive to service quality and a welcoming atmosphere.
+"""
 
 
 RESTAURANT_PROFILE_GENERATION_PROMPT = """

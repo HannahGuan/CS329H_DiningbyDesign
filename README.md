@@ -37,15 +37,7 @@ User Profiles = 20k
 
 Resautants Profiles = 50k
 
-### Models Candidates to Generate Profiles:
-
-**Qwen/Qwen3-30B-A3B**
-
-**Openai/gpt-oss-20b**
-
-**Openai/gpt-oss-120b**
-
-
+### Model to Generate Profiles and Processing: **Openai/gpt-oss-120b**
 
 
 

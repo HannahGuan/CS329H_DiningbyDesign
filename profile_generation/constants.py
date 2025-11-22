@@ -65,21 +65,33 @@ Also, you will be given a list of reviews to the current business:
 {sample_reviews}
 <|SAMPLE REVIEWS TO CURRENT BUSINESS|>
 
-TASK
-Write a single, fluent paragraph that summarizes what this restaurant is like.
+Your task is to infer the restaurant's key characteristics and customer-relevant qualities, and express them as a natural-language description.
 
-REQUIREMENTS
-1. The output must be exactly one paragraph (no headings, bullet points, or line breaks).
-2. Clearly mention the restaurant's **name** and **location** (city and state, if available).
-3. Refer to the **categories** to describe the type of restaurant (e.g., cuisine, setting, or business type).
-4. Use relevant **attributes** to describe practical details such as price level, ambiance, noise, reservations, parking, takeout/delivery, outdoor seating, suitability for groups/families, etc.
-5. Read the **sample_reviews** and use them to infer the overall atmosphere, service style, food quality, and typical customer experience, but:
-   - Do NOT mention “reviews”, “reviewers”, “ratings”, “stars”, or “Yelp”.
-   - Paraphrase instead of copying text verbatim.
-6. Keep the tone neutral and descriptive, not overly positive or negative.
-7. Do not invent specific details that are not suggested by the JSON (e.g., menu items, exact prices, or décor themes that are not implied).
-8. If some fields (attributes, reviews, etc.) are missing or empty, simply omit them; do not say that the information is missing.
+Write a concise restaurant profile that can be used to **optimize restaurant recommendation**.
+Focus on clear, explicit signals about cuisine, atmosphere, service, pricing, and practical features.
 
-OUTPUT FORMAT
-- Return only the final paragraph as plain text, with no quotes around it and no additional explanation.
+# Instructions:
+1. Briefly identify the restaurant (mentioning its name is optional); only include location if it naturally supports understanding the setting.
+2. Use the provided categories to describe the restaurant's cuisine, style, and overall identity.
+3. Incorporate relevant attributes such as price level, ambiance, noise level, service style, parking, reservations, takeout/delivery, outdoor seating, kid- or group-friendliness, accessibility, and other practical conveniences.
+4. Use the customer review snippets to infer the typical dining experience:
+   - never referring to the snippets as “reviews,” “reviewers,” “ratings,” or “stars,”
+   - paraphrasing insights rather than copying text,
+   - keeping the tone neutral, balanced, and descriptive.
+5. Do not invent details that are not supported by the data; avoid specifying dishes or décor features unless clearly implied.
+6. If some fields are missing or sparse, simply omit them; do not comment on missing information.
+7. Mention advantages and disadvantages in an impersonal, attribute-focused way. Do not use phrases like “some guests say,” “customers noted,” “people mentioned,” or any wording that references opinions or groups of diners. Instead, express drawbacks as general characteristics only when they are clearly implied (e.g., “portions may be modest” or “service can slow during peak hours”).
+8. The paragraph should be smooth and natural, optimized for restaurant recommendation: concrete, attribute-rich, and focused on what guests can expect.
+
+
+# Output requirements
+- Output exactly ONE paragraph, wrapped in <PROFILE> and </PROFILE> tags.
+- The paragraph must start with the restaurant's name (if available).
+- Length: One long paragraph of plain text
+
+Your final answer must be ONLY the <PROFILE> paragraph and nothing else.
+"""
+
+RESTAURANT_PROFILE_GENERATION_EXAMPLE = """
+Freddy's Frozen Custard & Steakburgers in Meridian, ID offers a casual fast‑casual experience centered on classic burgers, hot dogs, and a variety of frozen custard and sundae desserts, positioned at the lowest price tier. The venue features counter service with no table reservations, a drive‑thru, and both takeout and delivery options, complemented by free Wi‑Fi, indoor TVs, and average‑level noise that suits families and groups. Practical conveniences include bike parking, a public parking lot, outdoor seating, and acceptance of credit cards, while the atmosphere remains relaxed and kid‑friendly. Guests can expect quick service even during busy periods, though burger patties may be on the thinner side; overall the menu’s strong points are the highly praised custard treats and solid burger flavors at budget‑friendly prices.
 """

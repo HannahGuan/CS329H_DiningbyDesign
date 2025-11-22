@@ -4,9 +4,10 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=2
 #SBATCH --cpus-per-gpu=8
-#SBATCH --output=/home/justin/CS329H_DiningbyDesign/%x.out
-#SBATCH --time=02:00:00
+#SBATCH --output=/home/justin/CS329H_DiningbyDesign/%x_restaurant.out
+#SBATCH --time=12:00:00
 #SBATCH --account=liquidai
+#SBATCH --exclude=liquid-gpu-001,liquid-gpu-006,liquid-gpu-029
 
 
 export PORT=$(( 8600 + (${SLURM_JOBID:-0} % 300) ))
@@ -33,43 +34,32 @@ srun vllm serve /lambdafs/pretrained/gpt-oss-120b \
     --served-model-name gpt-oss-120b \
     --host 0.0.0.0 \
     --port "$PORT" \
-    --dtype bfloat16 \
     --no-enable-prefix-caching \
     --no-enable-chunked-prefill \
     --tensor-parallel-size 2 \
-    --gpu-memory-utilization 0.7
+    --gpu-memory-utilization 0.7 \
+    --dtype bfloat16 \
     &
 
-echo "vLLM PID: $SERVER_PID"
 
+echo "Waiting for vLLM server to be ready..."
+start_time=$(date +%s)
+timeout_duration=900  # 15 minutes in seconds
 
-# Poll readiness
-for i in {1..120}; do
-if curl -sf "http://127.0.0.1:${PORT}/v1/models" >/dev/null; then
-    echo "✅ vLLM is up."
-    break
-fi
-if ! kill -0 "$SERVER_PID" 2>/dev/null; then
-    echo "❌ vLLM crashed. Last 100 lines:"
-    tail -n 100 vllm_server.log
-    exit 1
-fi
-sleep 5
+while ! curl -s http://localhost:$PORT/health > /dev/null 2>&1; do
+    current_time=$(date +%s)
+    elapsed=$((current_time - start_time))
+    if [ $elapsed -ge $timeout_duration ]; then
+        echo "Timeout: vLLM server did not become ready within 15 minutes"
+        echo "Killing vLLM server and exiting..."
+        pkill -f "vllm serve"
+        exit 1
+    fi
+    
+    sleep 10
+    echo "Waiting for vLLM server... (${elapsed}/${timeout_duration}s elapsed)"
 done
-
-# Smoke test
-echo "Sending a test prompt..."
-curl http://localhost:${PORT}/v1/chat/completions \
--H "Content-Type: application/json" \
--d '{
-    "model": "gpt-oss-120b",
-    "messages": [{"role": "user", "content": "Hello, are you running correctly?"}],
-    "temperature": 0.3,
-    "min_p": 0.15,
-    "repetition_penalty": 1.05,
-    "max_tokens": 100
-}' || echo "❌ Prompt failed"
-
+echo "vLLM server is ready!"
 
 # generate data
-python generate_profiles.py --profile_type restaurant
+python /home/justin/CS329H_DiningbyDesign/profile_generation/generate_profiles.py --profile_type restaurant

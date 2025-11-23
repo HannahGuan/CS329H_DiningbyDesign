@@ -38,10 +38,11 @@ User Profiles = 20k
 Restaurants + Non-Restaurants Profiles = ~78k
 
 ### Model to Generate Profiles and Processing: **Openai/gpt-oss-120b**
-### Model Candidates to fine tune (4-8b):
-  - Qwen3
-  - LFM
-  - Gemma
+### Model Candidates to fine tune (<8b):
+  - Qwen3: 0.6B, 1.7B, 4B, 8B
+  - LFM: 350M, 750M, 1.2B, 2.6B, 8B
+  - Gemma: 4B
+### Parameters Update: Full Weight / LoRA
 
 
 

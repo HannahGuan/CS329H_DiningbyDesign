@@ -38,6 +38,10 @@ User Profiles = 20k
 Restaurants + Non-Restaurants Profiles = ~78k
 
 ### Model to Generate Profiles and Processing: **Openai/gpt-oss-120b**
+### Model Candidates to fine tune (4-8b):
+  - Qwen3
+  - LFM
+  - Gemma
 
 
 

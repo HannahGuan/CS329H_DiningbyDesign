@@ -43,9 +43,9 @@ Resautants Profiles = 50k
 
 
 # Next Step
-Create each user's profile (Possibly by creating a prompt for each user based on reviews). Now-11.21 Fatday
+Create each user's profile (Possibly by creating a prompt for each user based on reviews). ✅️ 11.22
 
-Create each restaurant's profile, based on users' reviews and basic info. 11.22-11.23 Hannah + Yanzhen
+Create each restaurant's profile, based on users' reviews and basic info. ✅️ 11.22
 
 Implement listwise preference training; Run listwise training + baselines (direct prompting, DPO, BERT models?) 11.24 - 12.1 
 

@@ -44,7 +44,7 @@ Restaurants + Non-Restaurants Profiles = ~78k
   - Gemmas: too dumbed ❌
   - Llamas: too dumbed ❌️
 ### Parameters Update: Full Weight / LoRA
-
+### Evaluation: TBD
 
 
 

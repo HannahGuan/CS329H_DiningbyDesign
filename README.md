@@ -35,7 +35,7 @@ Perplexity of the User profile + the restaurant's profile in the trained model.
 
 User Profiles = 20k
 
-Resautants Profiles = 50k
+Restaurants + Non-Restaurants Profiles = ~78k
 
 ### Model to Generate Profiles and Processing: **Openai/gpt-oss-120b**
 

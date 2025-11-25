@@ -1,2 +1,7 @@
 /Yelp
 *.json
+
+# Large data files (>100MB) - too big for GitHub
+LLM4Rec/data/business.jsonl
+LLM4Rec/data/user_profiles.jsonl
+LLM4Rec/data/dpo_preference_dataset.jsonl

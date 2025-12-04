@@ -13,7 +13,6 @@ from datasets import load_dataset
 import json
 # get the port from the environment variable
 port = os.getenv("PORT", 8000)
-#host = "liquid-gpu-012"
 
 model =  AsyncOpenAI(
     base_url=os.getenv("dummy_url", f"http://localhost:{port}/v1"),

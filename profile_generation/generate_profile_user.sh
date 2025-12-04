@@ -6,8 +6,7 @@
 #SBATCH --cpus-per-gpu=8
 #SBATCH --output=/home/justin/CS329H_DiningbyDesign/%x_user.out
 #SBATCH --time=12:00:00
-#SBATCH --account=liquidai
-#SBATCH --exclude=liquid-gpu-001,liquid-gpu-006
+
 
 
 export PORT=$(( 8600 + (${SLURM_JOBID:-0} % 300) ))

@@ -117,7 +117,7 @@ All datasets are hosted on Hugging Face and will be automatically downloaded whe
    - Includes sampled review comments and business metadata
    - Generated using GPT-based models
 
-### DPO Training & Evaluation Data
+### DPO Training & Evaluation Data Examples (Full List)
 
 3. **[zetianli/CS329H_DPO_FullList_train](https://huggingface.co/datasets/zetianli/CS329H_DPO_FullList_train)**
    - DPO training set with user-restaurant preference pairs

@@ -5,3 +5,6 @@
 LLM4Rec/data/business.jsonl
 LLM4Rec/data/user_profiles.jsonl
 LLM4Rec/data/dpo_preference_dataset.jsonl
+LLM4Rec_server/data/business.jsonl
+LLM4Rec_server/data/dpo_preference_dataset.jsonl
+LLM4Rec_server/data/user_profiles.jsonl

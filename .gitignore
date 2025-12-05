@@ -9,3 +9,5 @@ LLM4Rec_server/data/business.jsonl
 LLM4Rec_server/data/dpo_preference_dataset.jsonl
 LLM4Rec_server/data/user_profiles.jsonl
 *.safetensors
+LLM4Rec/yanzhen_final_list/data/dpo_train_gap1.jsonl
+LLM4Rec/yanzhen_final_single/data/dpo_train_gap1.jsonl

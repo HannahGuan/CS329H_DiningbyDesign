@@ -1,0 +1,29 @@
+# Core dependencies for CS329H_DiningbyDesign
+# This file specifies the minimum required versions for reproducibility
+# For exact package versions used in our experiments, see the Reproducibility section in README.md
+
+# Deep Learning Framework
+torch>=2.0.0
+transformers>=4.40.0
+accelerate>=0.27.0
+
+# Dataset & Data Processing
+datasets>=2.14.0
+huggingface_hub>=0.20.0
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Model Training & Fine-tuning
+peft>=0.10.0
+trl>=0.8.0
+bitsandbytes>=0.43.0
+
+# Evaluation & Metrics
+scikit-learn>=1.3.0
+
+# Utilities
+tqdm>=4.65.0
+wandb>=0.16.0
+
+# Optional (for profile generation)
+# openai>=1.0.0  # Uncomment if regenerating profiles

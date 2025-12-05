@@ -1,0 +1,12 @@
+/content/drive/MyDrive/CS329H_MLHP/329H_Final_project/LLM4Rec/hannah_qwen_list/models/Qwen3-0.6B_gap2_n5000_ep3_bs2_lr1e-05
+Generation-Based Ranking Accuracy:
+
+Base Model:
+  Accuracy: 56.50% (113/200)
+
+Trained Model:
+  Accuracy: 72.82% (142/195)
+
+Improvement:
+  Accuracy Gain: 16.32%
+--------------------------------------------------

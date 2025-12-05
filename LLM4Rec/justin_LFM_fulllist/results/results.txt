@@ -1,0 +1,55 @@
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/justin/models/Qwen3-0.6B_gap1_n5000_ep4_bs4_lr1e-05fs
+Base Accuracy: {
+    "map": 0.8143680555555557,
+    "ndcg": 0.8967812519841963,
+    "pairwise": 0.6865773809523807,
+    "perplexity_chosen": 37.704863420864434,
+    "perplexity_rejected": 38.64784661073717,
+    "perplexity_diff": -0.9429831898727343
+}
+Trained Accuracy: {
+    "map": 0.9464375000000002,
+    "ndcg": 0.9840881369769149,
+    "pairwise": 0.9313214285714285,
+    "perplexity_chosen": 50.79104143539581,
+    "perplexity_rejected": 53.067109058372154,
+    "perplexity_diff": -2.2760676229763432
+}
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/justin/models/LFM2-350M_gap1_n5000_ep4_bs4_lr1e-05fs
+Base Accuracy: {
+    "map": 0.7953194444444446,
+    "ndcg": 0.8847306942038139,
+    "pairwise": 0.6533492063492063,
+    "perplexity_chosen": 52.646957671827906,
+    "perplexity_rejected": 52.12275690985631,
+    "perplexity_diff": 0.5242007619715969
+}
+Trained Accuracy: {
+    "map": 0.9246736111111109,
+    "ndcg": 0.9650940313732832,
+    "pairwise": 0.8988055555555554,
+    "perplexity_chosen": 58.09100138411086,
+    "perplexity_rejected": 58.254300259444555,
+    "perplexity_diff": -0.16329887533369403
+}
+--------------------------------------------------
+GPT4o-mini
+Base Accuracy: {
+    "map": 0.98,
+    "ndcg": 1.0,
+    "pairwise": 1.0,
+    "perplexity_chosen": 0.0,
+    "perplexity_rejected": 0.0,
+    "perplexity_diff": 0.0
+}
+Trained Accuracy: {
+    "map": 0.9263263888888887,
+    "ndcg": 0.9675447618775059,
+    "pairwise": 0.8766170634920634,
+    "perplexity_chosen": 0.0,
+    "perplexity_rejected": 0.0,
+    "perplexity_diff": 0.0
+}
+--------------------------------------------------

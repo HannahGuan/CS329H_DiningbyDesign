@@ -1,0 +1,17 @@
+/content/drive/MyDrive/CS329H_MLHP/329H_Final_project/LLM4Rec/hannah_qwen_list/models/Qwen3-0.6B_gap2_n5000_ep3_bs2_lr1e-05
+Base Model:
+  Chosen PPL:     7.78
+  Rejected PPL:   7.35
+  PPL Difference: -0.43
+  Accuracy:       43.50%
+
+Trained Model:
+  Chosen PPL:     59.04
+  Rejected PPL:   308.69
+  PPL Difference: 249.65
+  Accuracy:       74.50%
+
+Improvement:
+  Accuracy Gain:  31.00%
+  PPL Diff Gain:  250.07
+--------------------------------------------------

@@ -1,0 +1,119 @@
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_single/models/LFM2-350M_gap2_n5000_ep3_bs4_lr1e-05
+Base Model:
+  Chosen PPL:     28.93
+  Rejected PPL:   28.81
+  PPL Difference: -0.12
+  Accuracy:       47.50%
+
+Trained Model:
+  Chosen PPL:     31.45
+  Rejected PPL:   33.99
+  PPL Difference: 2.54
+  Accuracy:       59.00%
+
+Improvement:
+  Accuracy Gain:  11.50%
+  PPL Diff Gain:  2.66
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_single/models/LFM2-350M_gap1_n5000_ep3_bs4_lr1e-05
+Base Model:
+  Chosen PPL:     28.93
+  Rejected PPL:   28.81
+  PPL Difference: -0.12
+  Accuracy:       47.50%
+
+Trained Model:
+  Chosen PPL:     30.90
+  Rejected PPL:   33.09
+  PPL Difference: 2.19
+  Accuracy:       59.50%
+
+Improvement:
+  Accuracy Gain:  12.00%
+  PPL Diff Gain:  2.31
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_single/models/LFM2-350M_gap3_n5000_ep3_bs4_lr1e-05
+Base Model:
+  Chosen PPL:     28.93
+  Rejected PPL:   28.81
+  PPL Difference: -0.12
+  Accuracy:       47.50%
+
+Trained Model:
+  Chosen PPL:     32.55
+  Rejected PPL:   35.17
+  PPL Difference: 2.62
+  Accuracy:       60.00%
+
+Improvement:
+  Accuracy Gain:  12.50%
+  PPL Diff Gain:  2.74
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_single/models/LFM2-350M_gap2_n2000_ep1_bs4_lr1e-05
+Base Model:
+  Chosen PPL:     28.93
+  Rejected PPL:   28.81
+  PPL Difference: -0.12
+  Accuracy:       47.50%
+
+Trained Model:
+  Chosen PPL:     29.30
+  Rejected PPL:   30.02
+  PPL Difference: 0.72
+  Accuracy:       52.00%
+
+Improvement:
+  Accuracy Gain:  4.50%
+  PPL Diff Gain:  0.84
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_single/models/LFM2-350M_gap2_n1000_ep2_bs4_lr1e-05
+Base Model:
+  Chosen PPL:     28.93
+  Rejected PPL:   28.81
+  PPL Difference: -0.12
+  Accuracy:       47.50%
+
+Trained Model:
+  Chosen PPL:     29.41
+  Rejected PPL:   30.13
+  PPL Difference: 0.72
+  Accuracy:       52.00%
+
+Improvement:
+  Accuracy Gain:  4.50%
+  PPL Diff Gain:  0.84
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_single/models/LFM2-350M_gap2_n4000_ep1_bs4_lr1e-05
+Base Model:
+  Chosen PPL:     28.93
+  Rejected PPL:   28.81
+  PPL Difference: -0.12
+  Accuracy:       47.50%
+
+Trained Model:
+  Chosen PPL:     29.62
+  Rejected PPL:   30.83
+  PPL Difference: 1.21
+  Accuracy:       55.00%
+
+Improvement:
+  Accuracy Gain:  7.50%
+  PPL Diff Gain:  1.33
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_single/models/LFM2-350M_gap2_n2000_ep2_bs4_lr1e-05
+Base Model:
+  Chosen PPL:     28.93
+  Rejected PPL:   28.81
+  PPL Difference: -0.12
+  Accuracy:       47.50%
+
+Trained Model:
+  Chosen PPL:     29.96
+  Rejected PPL:   31.18
+  PPL Difference: 1.21
+  Accuracy:       54.00%
+
+Improvement:
+  Accuracy Gain:  6.50%
+  PPL Diff Gain:  1.33
+--------------------------------------------------

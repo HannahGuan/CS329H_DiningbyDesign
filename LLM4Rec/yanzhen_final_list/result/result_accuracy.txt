@@ -1,0 +1,97 @@
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_list/models/LFM2-350M_gap2_n5000_ep3_bs4_lr1e-05
+Generation-Based Ranking Accuracy:
+
+Base Model:
+  Accuracy: 56.00% (112/200)
+
+Trained Model:
+  Accuracy: 62.50% (125/200)
+
+Improvement:
+  Accuracy Gain: 6.50%
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_list/models/LFM2-350M_gap1_n5000_ep3_bs4_lr1e-05
+Generation-Based Ranking Accuracy:
+
+Base Model:
+  Accuracy: 56.00% (112/200)
+
+Trained Model:
+  Accuracy: 54.27% (108/199)
+
+Improvement:
+  Accuracy Gain: -1.73%
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_list/models/LFM2-350M_gap3_n5000_ep3_bs4_lr1e-05
+Generation-Based Ranking Accuracy:
+
+Base Model:
+  Accuracy: 56.00% (112/200)
+
+Trained Model:
+  Accuracy: 58.50% (117/200)
+
+Improvement:
+  Accuracy Gain: 2.50%
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_list/models/LFM2-350M_gap2_n5000_ep3_bs4_lr1e-05
+Generation-Based Ranking Accuracy:
+
+Base Model:
+  Accuracy: 56.00% (112/200)
+
+Trained Model:
+  Accuracy: 61.93% (122/197)
+
+Improvement:
+  Accuracy Gain: 5.93%
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_list/models/LFM2-350M_gap2_n1000_ep2_bs4_lr1e-05
+Generation-Based Ranking Accuracy:
+
+Base Model:
+  Accuracy: 51.00% (102/200)
+
+Trained Model:
+  Accuracy: 55.00% (110/200)
+
+Improvement:
+  Accuracy Gain: 4.00%
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_list/models/LFM2-350M_gap2_n2000_ep1_bs4_lr1e-05
+Generation-Based Ranking Accuracy:
+
+Base Model:
+  Accuracy: 56.50% (113/200)
+
+Trained Model:
+  Accuracy: 59.00% (118/200)
+
+Improvement:
+  Accuracy Gain: 2.50%
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_list/models/LFM2-350M_gap2_n4000_ep1_bs4_lr1e-05
+Generation-Based Ranking Accuracy:
+
+Base Model:
+  Accuracy: 52.00% (104/200)
+
+Trained Model:
+  Accuracy: 53.00% (106/200)
+
+Improvement:
+  Accuracy Gain: 1.00%
+--------------------------------------------------
+/content/drive/MyDrive/329H_Final_project/LLM4Rec/yanzhen_final_list/models/LFM2-350M_gap2_n2000_ep2_bs4_lr1e-05
+Generation-Based Ranking Accuracy:
+
+Base Model:
+  Accuracy: 56.50% (113/200)
+
+Trained Model:
+  Accuracy: 52.50% (105/200)
+
+Improvement:
+  Accuracy Gain: -4.00%
+--------------------------------------------------

@@ -210,12 +210,12 @@ Note: Profile generation requires access to GPT-based models and may incur API c
 
 The trained DPO model checkpoints are available and referenced in the notebooks. However, due to the size limitation, we cannot upload everything to Github. Links to use trained models via HuggingFace:
 
-- LFM2-350M DPO (full-list): (https://huggingface.co/HannahGrj/dpo-lfm-fullList-gap2-n5000)
-- LFM2-350M DPO (length2-list): (https://huggingface.co/HannahGrj/dpo-lfm2-350m-length2list-gap2-5000)
-- LFM2-350M DPO (single-item): (https://huggingface.co/HannahGrj/dpo-lfm2-350m-single-gap2-n5000)
-- Qwen3-0.6B DPO (full-list): (https://huggingface.co/HannahGrj/dpo-qwen-fullList-gap2-n5000)
-- Qwen3-0.6B DPO (length2-list): (https://huggingface.co/HannahGrj/dpo-qwen-length2list-gap2-n5000)
-- Qwen3-0.6B DPO (single-item): (https://huggingface.co/HannahGrj/dpo-qwen-single-gap2-n5000)
+- [LFM2-350M DPO (full-list)](https://huggingface.co/HannahGrj/dpo-lfm-fullList-gap2-n5000)
+- [LFM2-350M DPO (length2-list)](https://huggingface.co/HannahGrj/dpo-lfm2-350m-length2list-gap2-5000)
+- [LFM2-350M DPO (single-item)](https://huggingface.co/HannahGrj/dpo-lfm2-350m-single-gap2-n5000)
+- [Qwen3-0.6B DPO (full-list)](https://huggingface.co/HannahGrj/dpo-qwen-fullList-gap2-n5000)
+- [Qwen3-0.6B DPO (length2-list)](https://huggingface.co/HannahGrj/dpo-qwen-length2list-gap2-n5000)
+- [Qwen3-0.6B DPO (single-item)](https://huggingface.co/HannahGrj/dpo-qwen-single-gap2-n5000)
 
 ## Computational Requirements
 

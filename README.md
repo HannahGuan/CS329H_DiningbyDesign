@@ -1,4 +1,4 @@
-# CS329H_DiningbyDesign
+<img width="568" height="335" alt="image" src="https://github.com/user-attachments/assets/6fbb2e9a-d6a1-4779-b84f-096b7feff792" /># CS329H_DiningbyDesign
 
 This repository contains the implementation of a personalized restaurant recommendation system using Direct Preference Optimization (DPO) to fine-tune large language models on user preferences derived from Yelp data.
 
@@ -80,6 +80,11 @@ The notebooks in `LLM4Rec/` are designed to run on Google Colab with A100 GPUs. 
 !pip install trl
 !pip install bitsandbytes
 !pip install huggingface_hub
+```
+If you want to run them locally, in the root use 
+
+```bash
+pip install -r requirements.txt
 ```
 
 Required packages (versions will be auto-installed):

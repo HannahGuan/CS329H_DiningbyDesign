@@ -1,4 +1,4 @@
-<img width="568" height="335" alt="image" src="https://github.com/user-attachments/assets/6fbb2e9a-d6a1-4779-b84f-096b7feff792" /># CS329H_DiningbyDesign
+# CS329H_DiningbyDesign
 
 This repository contains the implementation of a personalized restaurant recommendation system using Direct Preference Optimization (DPO) to fine-tune large language models on user preferences derived from Yelp data.
 
